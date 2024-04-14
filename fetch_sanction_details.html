@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanction Details Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='fetch_sanction_styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Search the sanction details</h1>
+            <form id="sanctionForm" action="/fetch_sanction_details" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cfaSanctionNo">CFA Sanction No.</label>
+                        <input type="text" id="cfaSanctionNo" name="cfaSanctionNo">
+                    </div>
+                </div>
+                <!-- Place the search button here -->
+                <div class="form-row">
+                    <button type="submit" id="searchButton">Search</button> <!-- Change type to submit -->
+                </div>
+                <!-- Fields will be populated here -->
+                <div class="form-row sanctionDetails">
+                    <div class="form-group">
+                        <label for="unitName">Unit Name</label>
+                        <input type="text" id="unitName" name="unitName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="cfaSanctionDate">CFA Sanction Date</label>
+                        <input type="text" id="cfaSanctionDate" name="cfaSanctionDate" readonly>
+                    </div>
+                </div>
+                <div class="form-row sanctionDetails">
+                    <div class="form-group">
+                        <label for="totalAmount">Total Amount</label>
+                        <input type="text" id="totalAmount" name="totalAmount" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="ifaConcurrence">IFA Concurrence</label>
+                        <input type="text" id="ifaConcurrence" name="ifaConcurrence" readonly>
+                    </div>
+                </div>
+                <div class="form-row sanctionDetails">
+                    <div class="form-group">
+                        <label for="ifaConcurrenceNo">IFA Concurrence No.</label>
+                        <input type="text" id="ifaConcurrenceNo" name="ifaConcurrenceNo" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="dfpdsSchedule">DFPDS Schedule</label>
+                        <textarea id="dfpdsSchedule" name="dfpdsSchedule" rows="4" readonly></textarea>
+                    </div>
+                </div>
+                <div class="form-row sanctionDetails">
+                    <div class="form-group">
+                        <label for="remarks">Remarks</label>
+                        <textarea id="remarks" name="remarks" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="provisionStatus">Provision Status</label>
+                        <select id="provisionStatus" name="provisionStatus">
+                            <option value="" disabled selected>Please select status</option>
+                            <option value="Verified by Auditor">Verified by Auditor</option>
+                            <option value="Approved by AAO">Approved by AAO</option>
+                            <option value="Approved by SAO">Approved by SAO</option>
+                            <option value="Acknowledged by Bill processing section">Acknowledged by Bill processing section</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group" id="rejectionReasonGroup"> <!-- Unique ID -->
+                        <label for="rejectionReason">Rejection Reason<span class="required" style="color: red;">*</span></label>
+                        <input type="text" id="rejectionReason" name="rejectionReason">
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" id="updateButton">Update</button> <!-- Change type to button -->
+                    <button onclick="window.location.href='{{ url_for('login_page') }}'" class="back-button">Back to Home</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='fetch_sanction_script.js') }}"></script>
+</body>
+</html>

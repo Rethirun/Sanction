@@ -1,0 +1,57 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #A4E4F4;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.white-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.date-picker {
+    margin-bottom: 20px;
+}
+
+.date-picker label {
+    margin-right: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+#backToHomeButton,
+#export-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+#backToHomeButton {
+    margin-right: 20px; /* Add margin to separate buttons */
+    background-color: #4CAF50;
+}
+
+#export-button {
+    background-color: #4CAF50;
+}

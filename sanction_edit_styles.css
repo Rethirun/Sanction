@@ -1,0 +1,110 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: #A4E4F4;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px; /* Adjust the max-width as needed */
+    margin: 0 auto; /* Center the container */
+}
+
+.container h1 {
+    color: blue;
+    text-align: center; /* Center the heading */
+    font-size: 24px; /* Reduce the font size */
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    flex-basis: calc(50% - 10px); /* Adjust the width of the form groups */
+}
+
+label {
+    display: block;
+    color: blue;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* CSS code */
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px; /* Add a margin between buttons */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button[type="submit"] {
+    margin-right: 5px; /* Adjust margin for submit button */
+}
+
+#backToHomeButton {
+    margin-left: 5px; /* Add margin to separate buttons */
+}
+
+#buttonContainer {
+    text-align: center; /* Center the buttons horizontally */
+}
+
+#ifaConcurrenceNoGroup,
+#rejectionReasonGroup {
+    display: none;
+}
+
+#provisionStatus {
+    margin-bottom: 0;
+}
+
+
+/* Adjustments for scrollbar in DFPDS schedule text field */
+textarea#dfpdsSchedule {
+    height: 80px; /* Adjust the height as needed */
+    overflow-y: auto;
+}
+
+
+/* Default option for Provision Status */
+#provisionStatus option[value=""] {
+    display: none; /* Hide the default empty option */
+}
+
+.required {
+    color: red;
+    margin-left: 5px;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Excel Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='report_styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="white-box">
+            <h2>Report Generation of sanction details entered</h2>
+            <form id="generateReport" action="/generate_report" method="get"> <!-- Changed method to GET -->
+                <div class="date-picker">
+                    <label for="start-date">Start Date:</label>
+                    <input type="date" id="start-date" name="start_date">
+                    <label for="end-date">End Date:</label>
+                    <input type="date" id="end-date" name="end_date">
+                </div>
+                <div class="button-container">
+                     <button id="backToHomeButton" type="button" onclick="window.location.href='{{ url_for('login_page') }}'">Back to Home</button>
+                     <button id="export-button">Export to Excel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanction Details Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='sanction_edit_styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Enter the Sanction details</h1>
+            <form id="sanctionForm" action="/sanction_details_edit" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="unitName">Unit Name <span class="required">*</span></label>
+                        <select id="unitName" name="unitName" required>
+                            <option value="">Please select unit</option>
+                            <option value="OD Avadi">OD Avadi</option>
+                            <option value="OTA Chennai">OTA Chennai</option>
+                            <option value="EHQ Chennai">EHQ Chennai</option>
+                            <option value="DSSC Wellington">DSSC Wellington</option>
+                            <option value="MRC Wellington">MRC Wellington</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cfaSanctionNo">CFA Sanction No.<span class="required">*</span></label>
+                        <input type="text" id="cfaSanctionNo" name="cfaSanctionNo" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cfaSanctionDate">CFA Sanction Date <span class="required">*</span></label>
+                        <input type="date" id="cfaSanctionDate" name="cfaSanctionDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="totalAmount">Total Amount <span class="required">*</span></label>
+                        <input type="text" id="totalAmount" name="totalAmount" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ifaConcurrence">IFA Concurrence <span class="required">*</span></label>
+                        <select id="ifaConcurrence" name="ifaConcurrence" required>
+                            <option value="" disabled selected>Please select..</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="NOT APPLICABLE">NOT APPLICABLE</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="ifaConcurrenceNoGroup">
+                        <label for="ifaConcurrenceNo">IFA Concurrence No.</label>
+                        <input type="text" id="ifaConcurrenceNo" name="ifaConcurrenceNo">
+                    </div>
+                </div>            
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dfpdsSchedule">DFPDS Schedule <span class="required">*</span></label>
+                        <textarea id="dfpdsSchedule" name="dfpdsSchedule" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="remarks">Remarks</label>
+                        <textarea id="remarks" name="remarks" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="provisionStatus">Provision Status<span class="required">*</span></label>
+                        <select id="provisionStatus" name="provisionStatus" required>
+                            <option value="" disabled selected>Please select status</option>
+                            <option value="Verified by Auditor">Verified by Auditor</option>
+                            <option value="Approved by AAO">Approved by AAO</option>
+                            <option value="Approved by SAO">Approved by SAO</option>
+                            <option value="Acknowledged by Bill processing section">Acknowledged by Bill processing section</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="actionedBy">Actioned out by<span class="required">*</span></label>
+                        <input type="text" id="actionedBy" name="actionedBy" value="please enter your name" onfocus="clearDefaultValue(this)" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group" id="rejectionReasonGroup">
+                        <label for="rejectionReason">Rejection Reason<span class="required">*</span></label>
+                        <input type="text" id="rejectionReason" name="rejectionReason">
+                    </div>
+                </div>
+                <div id="buttonContainer">
+                <button type="submit">Submit</button>
+                <button type="button" id="backToHomeButton" onclick="window.location.href='{{ url_for('login_page') }}';">Back to Home</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="messageBox" style="display: none;"></div> <!-- Message box initially hidden -->
+    <script src="{{ url_for('static', filename='sanction_edit_script.js') }}"></script>
+</body>
+</html>
